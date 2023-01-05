@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema()
+const Schema = mongoose.Schema
 
 // 建立資料結構
 const todoSchema = new Schema({
