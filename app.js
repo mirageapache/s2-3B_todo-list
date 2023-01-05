@@ -1,5 +1,6 @@
 // 載入框架、套件工具
 const express = require('express')
+const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
 
 // 表示僅在非正式環境使用dotenv
@@ -25,10 +26,14 @@ db.on('error', () => {
   console.log('mongodb error!')
 })
 
+//view engine
+app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}))
+app.set('view engine', 'handlebars')
+
 
 // 路由設定
 app.get('/', (req, res) => {
-  res.send('hello world!')
+  res.render('index')
 })
 
 // 伺服器監聽
