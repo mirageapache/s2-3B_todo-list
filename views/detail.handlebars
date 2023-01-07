@@ -2,5 +2,9 @@
 <hr>
 
 <h3> {{ todo.name }} </h3>
-<a href="/todos/{{ this._id }}/edit">edit</a>
-<a href="/">back</a>
+<a href="/todos/{{ todo._id }}/edit">Edit</a>
+<form action="/todos/{{ todo._id }}/delete" method="post" style="display: inline;">
+  <button type="submit">Delete</button>
+</form>
+
+<a href="/">Back</a>
